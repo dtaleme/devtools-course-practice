@@ -33,7 +33,7 @@ VigenereCipher::VigenereCipher(const std::string& original,
 const std::string& VigenereCipher::getOriginal() const { return m_original; }
 const std::string& VigenereCipher::getKey() const { return m_key; }
 
-const std::string& VigenereCipher::getCompare() const {
+const std::string VigenereCipher::getCompare() const {
   std::string cipher(this->cipher());
   std::string orig(this->getOriginal());
   std::string concat = orig + " - " + cipher;
