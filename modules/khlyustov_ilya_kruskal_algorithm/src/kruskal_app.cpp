@@ -72,18 +72,6 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
     std::cout << os.str() << std::endl;
     return "success";
   }
-  if (std::string(argv[i]) == "--test4" || std::string(argv[i]) == "-t4") {
-    size_t nodes = atoi(argv[2]);
-    std::vector<Edge> edges = {
-        Edge(atoi(argv[3]), atoi(argv[4]), atoi(argv[5])),
-        Edge(atoi(argv[6]), atoi(argv[7]), atoi(argv[8])),
-    };
-    Graph testGraph(nodes, edges);
-    // EXPECT_EQ(edges, testGraph.getMST());
-    os << testGraph.getMST().size();
-    std::cout << os.str() << std::endl;
-    return "success";
-  }
   return "success";
 }
 
