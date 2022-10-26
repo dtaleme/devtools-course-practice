@@ -3,3 +3,52 @@
 #############################################
 
 set(prefix "${MODULE}")
+
+add_test(
+    NAME ${prefix}_run_program
+    COMMAND ${APPLICATION}
+)
+set_tests_properties (${prefix}_run_program PROPERTIES
+    PASS_REGULAR_EXPRESSION "Invalid argument amount, try --help or -h commands"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_get_help
+    COMMAND ${APPLICATION} --help
+)
+set_tests_properties (${prefix}_get_help PROPERTIES
+    PASS_REGULAR_EXPRESSION "This program considers the integral"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_test1
+    COMMAND ${APPLICATION} -t1 3 1 2 123 0 1 456
+)
+set_tests_properties (${prefix}_test1 PROPERTIES
+    PASS_REGULAR_EXPRESSION "3\nsuccess"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_test2
+    COMMAND ${APPLICATION} -t2 3 3 4 523 9 8 676
+)
+set_tests_properties (${prefix}_test2 PROPERTIES
+    PASS_REGULAR_EXPRESSION "3\nsuccess"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_test3
+    COMMAND ${APPLICATION} -t3 3 3 5 6 2 6 4
+)
+set_tests_properties (${prefix}_test3 PROPERTIES
+    PASS_REGULAR_EXPRESSION "3\nsuccess"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_test4
+    COMMAND ${APPLICATION} -t4 3 10 12 0 3 15 0
+)
+set_tests_properties (${prefix}_test4 PROPERTIES
+    PASS_REGULAR_EXPRESSION "3\nsuccess"
+    LABELS "${MODULE}")
+
