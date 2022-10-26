@@ -114,3 +114,11 @@ TEST(BYSTROV_ANDREY_VIGENERE_TEST, CheckSetPairWithNotAllowedCharacter) {
 
   ASSERT_ANY_THROW(v.setPair("TE12", "QW12"));
 }
+
+TEST(BYSTROV_ANDREY_VIGENERE_TEST, CheckCompare) {
+  VigenereCipher v("ATTACKATDAWN", "LEMONLEMONLE");
+
+  std::string cipher = v.cipher();
+
+  ASSERT_EQ(v.getOriginal() + " - " + cipher, "ATTACKATDAWN - LXFOPVEFRNHR");
+}

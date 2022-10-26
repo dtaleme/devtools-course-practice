@@ -33,6 +33,10 @@ VigenereCipher::VigenereCipher(const std::string& original,
 const std::string& VigenereCipher::getOriginal() const { return m_original; }
 const std::string& VigenereCipher::getKey() const { return m_key; }
 
+const std::string& VigenereCipher::getCompare() const {
+  return this->getOriginal() + " - " + this->cipher();
+}
+
 void VigenereCipher::setOriginal(const std::string& original) {
   if (m_original.size() != original.size())
     throw std::invalid_argument("wrong length");

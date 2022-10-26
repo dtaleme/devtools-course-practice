@@ -15,6 +15,7 @@ class VigenereCipher {
 
   const std::string& getOriginal() const;
   const std::string& getKey() const;
+  const std::string& getCompare() const;
 
   void setOriginal(const std::string& original);
   void setKey(const std::string& key);
