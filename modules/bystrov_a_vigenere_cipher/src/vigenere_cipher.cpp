@@ -34,7 +34,10 @@ const std::string& VigenereCipher::getOriginal() const { return m_original; }
 const std::string& VigenereCipher::getKey() const { return m_key; }
 
 const std::string& VigenereCipher::getCompare() const {
-  return this->getOriginal() + " - " + this->cipher();
+  std::string cipher(this->cipher());
+  std::string orig(this->getOriginal());
+  std::string concat = orig + " - " + cipher;
+  return concat;
 }
 
 void VigenereCipher::setOriginal(const std::string& original) {
