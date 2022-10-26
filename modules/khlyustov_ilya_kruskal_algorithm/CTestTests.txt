@@ -25,30 +25,22 @@ add_test(
     COMMAND ${APPLICATION} -t1 3 1 2 123 0 1 456
 )
 set_tests_properties (${prefix}_test1 PROPERTIES
-    PASS_REGULAR_EXPRESSION "3\nsuccess"
+    PASS_REGULAR_EXPRESSION "2\nsuccess"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_test2
-    COMMAND ${APPLICATION} -t2 3 3 4 523 9 8 676
+    COMMAND ${APPLICATION} -t2 5 1 2 1 0 1 2 0 2 3 2 4 4 4 3 5 1 4 6
 )
 set_tests_properties (${prefix}_test2 PROPERTIES
-    PASS_REGULAR_EXPRESSION "3\nsuccess"
+    PASS_REGULAR_EXPRESSION "5\nsuccess"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_test3
-    COMMAND ${APPLICATION} -t3 3 3 5 6 2 6 4
+    COMMAND ${APPLICATION} -t3 5 1 2 1 0 1 2 0 2 3 2 4 4 4 3 5 1 4 6
 )
 set_tests_properties (${prefix}_test3 PROPERTIES
-    PASS_REGULAR_EXPRESSION "3\nsuccess"
-    LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_test4
-    COMMAND ${APPLICATION} -t4 3 10 12 0 3 15 0
-)
-set_tests_properties (${prefix}_test4 PROPERTIES
-    PASS_REGULAR_EXPRESSION "3\nsuccess"
+    PASS_REGULAR_EXPRESSION "6\nsuccess"
     LABELS "${MODULE}")
 
