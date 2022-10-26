@@ -69,3 +69,9 @@ TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, DivisionOperator) {
   auto product = first / second;
   ASSERT_EQ(product, ComplexNumber(0.44, 0.08));
 }
+
+TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, DivisionByZeroError) {
+  auto first = ComplexNumber(1.0, 2.0);
+  auto second = ComplexNumber();
+  ASSERT_THROW(first / second, std::string);
+}
