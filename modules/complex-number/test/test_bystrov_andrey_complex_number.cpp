@@ -76,3 +76,25 @@ TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, DivisionByZeroError) {
   auto second = ComplexNumber();
   ASSERT_THROW(first / second, std::string);
 }
+
+TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, GetRe) {
+  ComplexNumber number(2.5, 5.0);
+  ASSERT_EQ(number.getRe(), 2.5);
+}
+
+TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, GetIm) {
+  ComplexNumber number(2.5, 5.0);
+  ASSERT_EQ(number.getIm(), 5.0);
+}
+
+TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, SetRe) {
+  ComplexNumber number(2.5, 5.0);
+  number.setRe(-3.0);
+  ASSERT_EQ(number.getRe(), -3.0);
+}
+
+TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, SetIm) {
+  ComplexNumber number(2.5, 5.0);
+  number.setIm(10.5);
+  ASSERT_EQ(number.getIm(), 10.5);
+}
