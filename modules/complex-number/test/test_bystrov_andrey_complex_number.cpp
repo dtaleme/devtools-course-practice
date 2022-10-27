@@ -20,7 +20,8 @@ TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, CopyConstructor) {
 
 TEST(BYSTROV_ANDREY_COMPLEX_NUMBER_TEST, AssignmentOperator) {
   auto origin = ComplexNumber(1.0, 2.0);
-  auto copy = ComplexNumber();
+  auto copy = ComplexNumber(origin);
+  EXPECT_EQ(copy, origin);
   ASSERT_NO_THROW(copy = origin);
 }
 
